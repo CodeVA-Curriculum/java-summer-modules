@@ -6,7 +6,6 @@ import remarkRehype from 'remark-rehype'
 import remarkDirective from 'remark-directive'
 import remarkDirectiveRehype from 'remark-directive-rehype'
 import rehypeStringify from 'rehype-stringify'
-import addClasses from 'rehype-add-classes'
 import rehypeDocument from 'rehype-document'
 import remarkExtract from 'remark-extract-frontmatter'
 import rehypeInline from 'rehype-inline'
@@ -14,8 +13,14 @@ import rehypeInjectStyles from './injectStyles.mjs'
 import rehypeDecapitate from './decapitate.mjs'
 import rehypeCanvasWrapper from './canvasWrapper.mjs'
 import rehypeFormat from 'rehype-format'
+import rehypeComponents from 'rehype-components'
 import yaml from 'yaml'
+import {h} from 'hastscript'
+import {YouTube} from './components/youtube/index.mjs'
 
+
+// const YouTube = (properties, children) =>
+  
 
 async function renderFile(path) {
     const html = await unified()
@@ -28,13 +33,11 @@ async function renderFile(path) {
     .use(remarkDirective)
     .use(remarkDirectiveRehype)
     .use(remarkRehype)
-    // .use(rehypeComponents, {
-    // //   components: {
-    // //     'ingredients': Ingredients
-    // //     // 'inline-code': InfoBox,
-    // //     // 'copyright-notice': CopyrightNotice,
-    // //     },
-    // })
+    .use(rehypeComponents, {
+      components: {
+            'youtube': YouTube
+        },
+    })
     // .use(rehypeInline)
     // .use(addClasses, {
     //   h1: 'title',
@@ -58,10 +61,6 @@ async function renderFile(path) {
     .use(rehypeStringify)
     .process(await read(path))
     return html;
-}
-
-async function writeToFile(path) {
-    
 }
 
 export {renderFile}

@@ -1,9 +1,10 @@
 import fs from 'fs/promises'
-import {write} from 'to-vfile'
+import {write, read} from 'to-vfile'
 import {renderFile} from './src/renderer.mjs'
 import inquirer from 'inquirer'
 
-main()
+const html = await renderFile('./src/tests/sample.md')
+console.log(html.value)
 
 async function ask() {
     const questions = [

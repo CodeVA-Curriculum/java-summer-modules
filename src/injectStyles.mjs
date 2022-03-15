@@ -13,12 +13,12 @@ export default function rehypeInjectStyles() {
                               if (!node.properties.style) {
                                   node.properties.style = ""
                               }
-                              node.properties.style+=`${selector}{`
+                            //   node.properties.style+=`${selector}{`
                               for(let i=0;i<rule.declarations.length;i++) {
                                   const d = rule.declarations[i]
                                   node.properties.style+=`${d.property}:${d.value};`
                               }
-                              node.properties.style+='}'
+                            //   node.properties.style+='}'
                           }
                       })
                   }
