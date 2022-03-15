@@ -6,7 +6,7 @@
   "author": "Jon Stapleton <stapleton.jon.michael@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf ./dist && mkdir dist && node index.mjs"
+    "build": "rm -rf ./dist && node index.mjs"
   },
   "dependencies": {
     "css": "^3.0.0",

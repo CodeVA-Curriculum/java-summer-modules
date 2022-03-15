@@ -2,9 +2,9 @@ import fs from 'fs/promises'
 import {write, read} from 'to-vfile'
 import {renderFile} from './src/renderer.mjs'
 import inquirer from 'inquirer'
+import path from "path"
 
-const html = await renderFile('./src/tests/sample.md')
-console.log(html.value)
+main()
 
 async function ask() {
     const questions = [
@@ -14,6 +14,12 @@ async function ask() {
             message: "Type the path to the folder containing your modules:",
             default: "./modules"
             // TODO: validate format
+        },
+        {
+            name: "assetsLocation",
+            type: "input",
+            message: "Enter the path to the folder containing the media assets referenced in your modules:",
+            default: "./assets"
         },
         {
             name: "writeTo",
@@ -27,10 +33,27 @@ async function ask() {
 }
 
 async function main() {
-    const {readFrom, writeTo} = await ask()
+    const {readFrom, assetsLocation, writeTo} = await ask()
+    await fs.mkdir(writeTo)
     await render(readFrom, writeTo)
+    copyDir(assetsLocation, writeTo+"/assets")
 }
 
+async function copyDir(src, dest) {
+    await fs.mkdir(dest, { recursive: true });
+    let entries = await fs.readdir(src, { withFileTypes: true });
+
+    for (let entry of entries) {
+        let srcPath = path.join(src, entry.name);
+        let destPath = path.join(dest, entry.name);
+
+        entry.isDirectory() ?
+            await copyDir(srcPath, destPath) :
+            await fs.copyFile(srcPath, destPath);
+    }
+}
+
+// TODO: throw error if the target directory is in the wrong format
 async function render(readFrom, writeTo) {
     // Get all the files in ./modules/
     const files = await getFiles(readFrom +'/')
@@ -53,7 +76,7 @@ async function render(readFrom, writeTo) {
 
         // Get the new path
         await write({
-            path: newDirectory+file.name,
+            path: newDirectory+file.name.replace('.md', '.html'),
             value: vf.value
         })
     }
