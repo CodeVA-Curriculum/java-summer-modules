@@ -1,3 +1,7 @@
 iframe {
-    border-radius: 12px;
+    border-radius: 10px;
+}
+
+h2 {
+    margin-top: 3rem;
 }

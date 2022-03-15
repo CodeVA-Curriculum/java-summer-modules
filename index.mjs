@@ -4,6 +4,10 @@ import {renderFile} from './src/renderer.mjs'
 import inquirer from 'inquirer'
 import path from "path"
 
+// const file = await read('./src/tests/module-1/sample.md')
+// const html = await renderFile(file)
+// console.log(String(html));
+
 main()
 
 async function ask() {
@@ -34,7 +38,6 @@ async function ask() {
 
 async function main() {
     const {readFrom, assetsLocation, writeTo} = await ask()
-    await fs.mkdir(writeTo)
     await render(readFrom, writeTo)
     copyDir(assetsLocation, writeTo+"/assets")
 }
@@ -55,15 +58,20 @@ async function copyDir(src, dest) {
 
 // TODO: throw error if the target directory is in the wrong format
 async function render(readFrom, writeTo) {
+    let madeDirs = []
+    // Create the new destination directory
+    await fs.mkdir(writeTo)
+    madeDirs.push(writeTo+"/")
+
     // Get all the files in ./modules/
     const files = await getFiles(readFrom +'/')
     
     // For each file in ./modules/, create a rendered version in ./dist/
-    let madeDirs = []
     for(const file of files) {
         // Create the directory
         let newDirectory = file.path.replace(readFrom+'/', "")
-        newDirectory = writeTo+"/"+newDirectory.substring(0, newDirectory.indexOf('/'))+"/"
+        console.log("Rendering "+newDirectory+'...')
+        newDirectory = writeTo+"/"+newDirectory.substring(0, newDirectory.indexOf('/'))
 
         // If the folder doesn't already exist
         if(!madeDirs.includes(newDirectory)) {
