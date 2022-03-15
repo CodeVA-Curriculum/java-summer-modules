@@ -53,7 +53,7 @@ async function renderFile(path) {
     })
     .use(rehypeInjectStyles)
     .use(rehypeDecapitate)
-    // .use(rehypeCanvasWrapper)
+    .use(rehypeCanvasWrapper)
     .use(rehypeFormat)
     .use(rehypeStringify)
     .process(await read(path))

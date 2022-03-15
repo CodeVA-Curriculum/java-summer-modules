@@ -4,22 +4,31 @@ import {renderFile} from './src/renderer.mjs'
 
 main()
 
-async function test() {
-    const vf = await renderFile('./src/tests/sample.md')
-    console.log(vf)
-}
-
 async function main() {
-    // Get all the files
+    // Get all the files in ./modules/
     const files = await getFiles('./modules/')
+    
     // For each file in ./modules/, create a rendered version in ./dist/
+    let madeDirs = []
     for(const file of files) {
+        // Create the directory
+        let newDirectory = file.path.replace("./modules/", "")
+        newDirectory = "./dist/"+newDirectory.substring(0, newDirectory.indexOf('/'))+"/"
+
+        // If the folder doesn't already exist
+        if(!madeDirs.includes(newDirectory)) {
+            await fs.mkdir(newDirectory)
+            madeDirs.push(newDirectory)
+        }
+
+        // Render the file
         const vf = await renderFile(file.path)
-        // TODO: Fix this path
-        // await write({
-        //     path: file.path,
-        //     value: vf.value
-        // })
+
+        // Get the new path
+        await write({
+            path: newDirectory+file.name,
+            value: vf.value
+        })
     }
 }
 
