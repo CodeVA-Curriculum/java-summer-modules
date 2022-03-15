@@ -8,4 +8,12 @@ Lorem ipsum sit dolor amet.
 
 ![An image](TODO:)
 
+:::collapse{title="Reveal answer"}
+### A subtitle
+
+* A list
+
+Some content
+:::
+
 ---

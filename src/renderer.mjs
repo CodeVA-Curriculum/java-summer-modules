@@ -17,6 +17,7 @@ import rehypeComponents from 'rehype-components'
 import yaml from 'yaml'
 import {h} from 'hastscript'
 import {YouTube} from './components/youtube/index.mjs'
+import {Collapse} from './components/collapse/index.mjs'
 
 
 // const YouTube = (properties, children) =>
@@ -35,7 +36,8 @@ async function renderFile(path) {
     .use(remarkRehype)
     .use(rehypeComponents, {
       components: {
-            'youtube': YouTube
+            'youtube': YouTube,
+            'collapse': Collapse
         },
     })
     // .use(rehypeInline)
