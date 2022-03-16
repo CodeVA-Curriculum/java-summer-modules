@@ -19,6 +19,7 @@ import {h} from 'hastscript'
 import {YouTube} from './components/youtube/index.mjs'
 import {Collapse} from './components/collapse/index.mjs'
 import {Callout} from './components/callout/index.mjs'
+import rehypeImageStyle from './imageStyle.mjs'
 import remarkGfm from 'remark-gfm'
 import behead from 'remark-behead'
 // const YouTube = (properties, children) =>
@@ -60,6 +61,7 @@ async function renderFile(path) {
         imports: false,
         svgElements: false,
     })
+    .use(rehypeImageStyle)
     .use(rehypeInjectStyles)
     .use(rehypeDecapitate)
     .use(rehypeCanvasWrapper)

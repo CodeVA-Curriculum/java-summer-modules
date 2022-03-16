@@ -22,7 +22,9 @@ table {
 
 th {
     border: 1px solid;
+    padding: 5px 5px;
 }
 td {
     border: 1px solid;
+    padding: 5px 5px;
 }
