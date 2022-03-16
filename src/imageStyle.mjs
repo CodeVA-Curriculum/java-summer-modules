@@ -6,6 +6,7 @@ export default function rehypeImageStyle() {
         visit(tree, 'element', function (node, index, parent) {
             if (['img'].includes(node.tagName)) {
                 node.properties.width="100%"
+                parent.properties.className = ["image-wrapper"]
             }
         })
     }
