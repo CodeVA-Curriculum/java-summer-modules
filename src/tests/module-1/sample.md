@@ -6,7 +6,7 @@ Lorem ipsum sit dolor amet.
 
 ::youtube[Child content]{#TODO:}
 
-![An image](TODO:)
+![The Processing editor](169932824)
 
 :::collapse{title="Reveal answer"}
 ### A subtitle

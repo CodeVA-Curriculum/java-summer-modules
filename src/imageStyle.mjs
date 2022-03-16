@@ -7,6 +7,9 @@ export default function rehypeImageStyle() {
             if (['img'].includes(node.tagName)) {
                 node.properties.width="100%"
                 parent.properties.className = ["image-wrapper"]
+                if(node.properties.src) {
+                    node.properties.src=`https://canvas.instructure.com/courses/4198981/files/${node.properties.src}/preview`
+                }
             }
         })
     }

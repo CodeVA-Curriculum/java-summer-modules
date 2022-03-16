@@ -15,7 +15,7 @@ export default function rehypeInjectStyles() {
                             }
                             if(node.properties.className) {
                                 if(node.properties.className.includes(selector.substring(1, selector.length))) {
-                                    console.log(selector, node.properties.className)
+                                    // console.log(selector, node.properties.className)
                                     applyStyle(rule, node)
                                 }
                             }
