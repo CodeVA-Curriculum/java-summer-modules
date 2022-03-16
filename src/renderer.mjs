@@ -14,6 +14,7 @@ import rehypeDecapitate from './decapitate.mjs'
 import rehypeCanvasWrapper from './canvasWrapper.mjs'
 import rehypeFormat from 'rehype-format'
 import rehypeComponents from 'rehype-components'
+import rehypeWrap from 'rehype-wrap'
 import yaml from 'yaml'
 import {h} from 'hastscript'
 import {YouTube} from './components/youtube/index.mjs'
@@ -38,6 +39,7 @@ async function renderFile(path) {
     .use(remarkDirective)
     .use(remarkDirectiveRehype)
     .use(remarkRehype)
+    // .use(rehypeWrap, { selector: 'p img', wrapper: 'div.image-p'})
     .use(rehypeComponents, {
       components: {
             'youtube': YouTube,

@@ -20,6 +20,7 @@
     "rehype-format": "^4.0.1",
     "rehype-inline": "^2.0.0",
     "rehype-stringify": "^9.0.3",
+    "rehype-wrap": "^1.0.10",
     "remark-behead": "^3.0.0",
     "remark-directive": "^2.0.1",
     "remark-directive-rehype": "^0.4.0",

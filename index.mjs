@@ -4,11 +4,11 @@ import {renderFile} from './src/renderer.mjs'
 import inquirer from 'inquirer'
 import path from "path"
 
-const file = await read('./src/tests/module-1/sample.md')
-const html = await renderFile(file)
-console.log(String(html));
+// const file = await read('./src/tests/module-1/sample.md')
+// const html = await renderFile(file)
+// console.log(String(html));
 
-// main()
+main()
 
 async function ask() {
     const questions = [
