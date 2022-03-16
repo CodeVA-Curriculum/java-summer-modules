@@ -16,4 +16,8 @@ Lorem ipsum sit dolor amet.
 Some content
 :::
 
+:::callout
+some stuff
+:::
+
 ---

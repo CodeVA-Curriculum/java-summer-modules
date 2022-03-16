@@ -9,7 +9,7 @@ export default function rehypeInjectStyles() {
               for(const rule of cast.stylesheet.rules) {
                   for(const selector of rule.selectors) {
                       visit(tree, 'element', (node) => {
-                          if(selector.includes(node.tagName)) {
+                          if(selector==node.tagName) {
                               if (!node.properties.style) {
                                   node.properties.style = ""
                               }

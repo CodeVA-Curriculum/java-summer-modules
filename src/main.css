@@ -5,3 +5,8 @@ iframe {
 h2 {
     margin-top: 3rem;
 }
+
+article {
+    background-color: #ede775;
+    margin: 2rem 2rem;
+}
