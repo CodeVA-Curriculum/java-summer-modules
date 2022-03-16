@@ -1,0 +1,68 @@
+
+<div style="max-width:986px;margin: 0 auto;">
+  <div style="text-align: center">
+    <iframe width="986" height="400" src="https://www.youtube.com/embed/oXmKJ_tYg34" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:10px;">A video describing how to access, read, and use information from the Processing reference materials</iframe>
+  </div>
+  <h2 style="margin-top:3rem;">Using the Processing Reference</h2>
+  <p>You've used two methods in your code so far, <code>size</code> and <code>ellipse</code>. The Processing framework comes with these methods built in, but they aren't the only ones---there are dozens of different methods to use in your Processing programs.</p>
+  <p>No one can remember all the methods they might use in their programs, so most people who work in Processing keep track of their options by using the <a href="">Processing Reference</a>, a webpage that describes all the methods you can use along with examples and explanations for the different parameters each one requires.</p>
+  <h3 style="margin-top:3rem;">A Program with New Methods</h3>
+  <p>The program below uses several new methods you can find in the reference; copy and paste the program below into a new Processing sketch and see what it can do:</p>
+  <pre><code class="language-java">// Monochrome Tree Program
+      
+// create the window
+size(640, 480);
+noStroke();
+background(250); // Draw a background 
+
+// title
+textSize(32);
+fill(0); // set text color
+text("Help the planet. Plant a tree!", 50, 50);
+  
+// tree
+fill(75); // set shape color  
+rect(310, 360, 20, 100);   
+fill(200); 
+circle(320, 350, 100);
+
+// message
+print("This is my first program");
+</code></pre>
+  <p>Read the code line-by-line, and make some changes to test out what each new method does. Experiment! If the program crashes or gives you an error message, just put the code back the way it was before and try again. You might not understand everything in example yet (that's okay!). Check out the links below to read about each of the new methods in the example:</p>
+  <ul>
+    <li><a href="https://processing.org/reference/noStroke_.html"><code>noStroke();</code></a></li>
+    <li><a href="https://processing.org/reference/background_.html"><code>background(c);</code></a></li>
+    <li><a href="https://processing.org/reference/textSize_.html"><code>textSize(s);</code></a></li>
+    <li><a href="https://processing.org/reference/fill_.html"><code>fill(c);</code></a></li>
+    <li><a href="https://processing.org/reference/text_.html"><code>text(String, x, y)</code></a></li>
+    <li><a href="https://processing.org/reference/rect_.html"><code>rect(x, y, w, h)</code></a></li>
+    <li><a href="https://processing.org/reference/ellipse_.html"><code>circle(x, y, r)</code></a></li>
+  </ul>
+  <p>If this seems like a lot of information to you, that's fine! You will have lots of opportunities to explore what Processing is capable of, and try out lots of different techniques for creating interesting things at a pace that works for you.</p>
+  <h3 style="margin-top:3rem;">Comments</h3>
+  <p>You probably noticed that there are some spots in the program above that contain sentences preceded by <code>//</code>. These are called <em>comments</em>; the computer will ignore the text that follows any <code>//</code> in your program. Programmers often use comments to leave notes in their programs, explaining the different sections of code so it's easier to read.</p>
+  <p>This program has a comment, but it's missing the <code>//</code>. This causes the computer to read their note as if it's code, which causes an error!</p>
+  <p><strong>Copy and paste the code below into your editor and run it to see the error, then add <code>//</code> to the beginning of the comment line to fix the program.</strong></p>
+  <pre><code class="language-java">size(640, 480)
+
+noStroke()
+
+Draw a tree
+fill(75); // set shape color  
+rect(310, 360, 20, 100);   
+fill(200); 
+circle(320, 350, 100);
+</code></pre>
+  <h3 style="margin-top:3rem;">Coding Challenge: Modify</h3>
+  <p>If you're up for a challenge, try modifying the <em>Monochrome Tree Program</em> that you copied from above to address one of the following prompts:</p>
+  <blockquote>
+    <p><strong>Mild:</strong> Right now, the <code>background</code> of the program is light as if the scene was during the day. Try changing the <code>background</code> color to a darker grey.</p>
+  </blockquote>
+  <blockquote>
+    <p><strong>Medium:</strong> Search for the <code>triangle</code> method in the Processing reference, and use it to add a pine tree to the scene produced by the <em>Monochrome Tree Program</em>.</p>
+  </blockquote>
+  <blockquote>
+    <p><strong>Spicy:</strong> Create a scene with three trees of different sizes and shapes, with labels using the <code>text</code> method to indicate their species.</p>
+  </blockquote>
+</div>

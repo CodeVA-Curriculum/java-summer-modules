@@ -6,7 +6,23 @@ h2 {
     margin-top: 3rem;
 }
 
+h3 {
+    margin-top: 3rem;
+}
+
 article {
     background-color: #ede775;
     margin: 2rem 2rem;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid;
+}
+
+th {
+    border: 1px solid;
+}
+td {
+    border: 1px solid;
 }

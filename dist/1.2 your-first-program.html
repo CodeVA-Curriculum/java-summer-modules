@@ -1,0 +1,97 @@
+
+<div style="max-width:986px;margin: 0 auto;">
+  <div style="text-align: center">
+    <iframe width="986" height="400" src="https://www.youtube.com/embed/oXmKJ_tYg34" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:10px;">A video tutorial version of the module</iframe>
+  </div>
+  <h2 style="margin-top:3rem;">Your First Program</h2>
+  <p>Processing is a tool for creating multi-media art with code. You will write instructions for the computer to follow using the Java programming language. When your computer follows these instructions, it will create a window that will show your visual art. You can check out some examples of the kinds of things people make with Processing <a href="https://openprocessing.org/browse/#">here</a>.</p>
+  <p>One of the simplest things to do at the beginning is to draw simple shapes using a series of commands. That’s what this module is about.</p>
+  <h3 style="margin-top:3rem;">Coding with Processing</h3>
+  <p>To get started, open Processing. You'll see a screen that looks like this:</p>
+  <p>
+    <img src="TODO:" alt="The Processing editor">
+  </p>
+  <p>Copy and paste the following code into the cream-colored window:</p>
+  <pre><code class="language-java">size(600, 400);
+ellipse(300, 200, 25, 25);
+</code></pre>
+  <p>Pay special attention to the spelling (including capitalization), the commas, and the semicolon at the end of the line!</p>
+  <p>Run your code by clicking the “play” button. What does the computer do when it follows the instructions you’ve provided? Mine does this:</p>
+  <p>
+    <img src="TODO:" alt="The output of the program above, displaying an ellipse in the center of a rectangular screen">
+  </p>
+  <p>If yours does something differently, you probably have a mistake in your code. Check that your version matches mine, and try again!</p>
+  <article style="background-color:#ede775;margin:2rem 2rem;">
+    <p>To save your work, click <code>File>Save</code> (or press <code>Ctrl+S</code>). After you save your program, you can close Processing without losing your work.</p>
+    <p>To return to a previous project, open the Processing environment, click <code>File>Open Recent</code>, and choose your project from the list.</p>
+    <p>Save your work frequently!</p>
+  </article>
+  <h3 style="margin-top:3rem;">Exploring the Code</h3>
+  <p>The code you've just created is a set of instructions for your computer to follow. The computer follows each step in your code in the order they are written. The first step (the line of code that says <code>size(600, 400);</code>) creates a window for the computer to draw things in. The second step (the one that says <code>ellipse(300, 200, 25, 25);</code>) tells the computer to draw an ellipse in that window.</p>
+  <p>
+    <img src="TODO:" alt="The code in the section above next to its output">
+  </p>
+  <p>
+    Next, try changing the code to experiment with the <code>ellipse</code> method (that’s what these commands are called in Java). The name of the method needs to stay the same (<code>ellipse</code> can’t change to <code>Ellipse</code> or whatever), but the numbers can be whatever you want. Try experimenting with numbers between 0 and 400 for each of the three included in the <code>ellipse</code> method.
+    The numbers included in the methods between the parentheses are called <em>parameters</em> (also called <em>arguments</em>). The parameters have an effect on what the computer does when it runs the method in your instructions. Each parameter has a different meaning---try to figure out what each parameter controls! Once you've experimented, click the button below to reveal information about the parameters for the <code>ellipse</code> method:
+  </p>
+  <h4><span class="element_toggler btn btn-primary" role="button" aria-controls="instructions" aria-label="Toggler toggle list visibility" aria-expanded="false">Reveal Info</span></h4>
+  <ul id="instructions" style="list-style: none; display: none;">
+    <li>
+      <h4>All About Ellipse</h4>
+      <p>The <code>ellipse</code> method takes 4 parameters:</p>
+      <pre><code class="language-java">ellipse(x, y, width, height);
+</code></pre>
+      <p>Here's what each one means:</p>
+      <table style="border-collapse:collapse;border:1px solid;">
+        <thead>
+          <tr>
+            <th style="border:1px solid;">Name</th>
+            <th style="border:1px solid;">Position</th>
+            <th style="border:1px solid;">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border:1px solid;"><code>x</code></td>
+            <td style="border:1px solid;">1st</td>
+            <td style="border:1px solid;">Sets the position of the shape on the x-axis of the screen, with 0 placing the center of the ellipse on the left edge of the application window</td>
+          </tr>
+          <tr>
+            <td style="border:1px solid;"><code>y</code></td>
+            <td style="border:1px solid;">2nd</td>
+            <td style="border:1px solid;">Sets the position of the shape on the y-axis of the screen, with 0 placing the center of the ellipse on the top edge of the application window, and larger numbers placing the ellipse further down</td>
+          </tr>
+          <tr>
+            <td style="border:1px solid;"><code>width</code></td>
+            <td style="border:1px solid;">3rd</td>
+            <td style="border:1px solid;">Sets the width of the ellipse in pixels</td>
+          </tr>
+          <tr>
+            <td style="border:1px solid;"><code>height</code></td>
+            <td style="border:1px solid;">4th</td>
+            <td style="border:1px solid;">Sets the height of the ellipse in pixels</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>You can find this information in the <a href="https://processing.org/reference/ellipse_.html">Processing reference materials</a>, along with similar material for all the other methods available in the Processing environment!</p>
+    </li>
+  </ul>
+  <hr>
+  <h3 style="margin-top:3rem;">Adding to the Code</h3>
+  <p>Each line of code in your program is a specific instruction for the computer to follow. Right now, your program only has two instructions:</p>
+  <ul>
+    <li><code>size(600, 400);</code>, which sets the size of the window that will display your program's output</li>
+    <li><code>ellipse(300, 200, 25, 25);</code>, which tells the computer to draw an ellipse in the window created in step #1</li>
+  </ul>
+  <p>Your code can have as many lines as you like! Complete Java programs have hundreds (or even thousands) of lines of code. Try adding a third step to your program that tells the computer to draw another ellipse, like so:</p>
+  <code-example TODO:="">
+    <pre><code class="language-java">size(600, 400);
+ellipse(300, 200, 25, 25);
+ellipse(150, 150, 50, 50);
+</code></pre>
+  </code-example>
+  <p>Press the "play" button to run the code. It should look like the screenshot above.</p>
+  <p>Yours might look different if you've used different parameters. You'll notice that the new ellipse looks like it's in "front" of the first ellipse. Remember, the computer follows the instructions in order. If the second ellipse overlaps the first one, the computer will draw "over" the first ellipse (sort of like adding a second layer of paint to an illustration).</p>
+  <hr>
+</div>
