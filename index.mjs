@@ -38,8 +38,13 @@ async function ask() {
 
 async function main() {
     const {readFrom, assetsLocation, writeTo} = await ask()
-    await render(readFrom, writeTo)
-    copyDir(assetsLocation, writeTo+"/assets")
+    if(readFrom != writeTo) {
+        // Do the thing
+        await render(readFrom, writeTo)
+        copyDir(assetsLocation, writeTo+"/assets")
+    } else {
+        console.log("\nThe 'write' directory cannot be the same as the 'read' directory! Try again.")
+    }
 }
 
 async function copyDir(src, dest) {
