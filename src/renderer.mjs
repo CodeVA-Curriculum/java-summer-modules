@@ -23,6 +23,7 @@ import {Callout} from './components/callout/index.mjs'
 import rehypeImageStyle from './imageStyle.mjs'
 import remarkGfm from 'remark-gfm'
 import behead from 'remark-behead'
+import addClasses from 'rehype-add-classes'
 // const YouTube = (properties, children) =>
   
 
@@ -48,25 +49,25 @@ async function renderFile(path) {
         },
     })
     // .use(rehypeInline)
-    // .use(addClasses, {
-    //   h1: 'title',
-    //   body: 'section'
-    //   // TODO: add classes
-    // }
-    .use(rehypeDocument, {
-        css: './src/main.css'
+    .use(addClasses, {
+      h1: 'title',
+      body: 'section'
+      // TODO: add classes
     })
-    .use(rehypeInline, {
-        js: false,
-        css: true,
-        images: false,
-        imports: false,
-        svgElements: false,
-    })
+    // .use(rehypeDocument, {
+    //     // css: './src/main.css'
+    // })
+    // .use(rehypeInline, {
+    //     js: false,
+    //     css: true,
+    //     images: false,
+    //     imports: false,
+    //     svgElements: false,
+    // })
     .use(rehypeImageStyle)
-    .use(rehypeInjectStyles)
-    .use(rehypeDecapitate)
-    .use(rehypeCanvasWrapper)
+    // .use(rehypeInjectStyles)
+    // .use(rehypeDecapitate)
+    // .use(rehypeCanvasWrapper)
     .use(rehypeFormat)
     .use(rehypeStringify)
     .process(await read(path))
