@@ -4,7 +4,7 @@ import {visit} from 'unist-util-visit'
 export default function rehypeImageStyle() {
     return (tree) => {
         visit(tree, 'element', function (node, index, parent) {
-            if (['img'].includes(node.tagName)) {
+            if (['img'].includes(node.tagName) && (!node.properties.className || node.properties.className.length == 0)) {
                 node.properties.width="100%"
                 parent.properties.className = ["image-wrapper"]
                 if(node.properties.src) {

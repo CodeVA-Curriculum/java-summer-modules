@@ -20,6 +20,7 @@ import {h} from 'hastscript'
 import {YouTube} from './components/youtube/index.mjs'
 import {Collapse} from './components/collapse/index.mjs'
 import {Callout} from './components/callout/index.mjs'
+import {CodeExample} from './components/code-example/index.mjs'
 import rehypeImageStyle from './imageStyle.mjs'
 import remarkGfm from 'remark-gfm'
 import behead from 'remark-behead'
@@ -44,7 +45,8 @@ async function renderFile(path) {
       components: {
             'youtube': YouTube,
             'collapse': Collapse,
-            'callout': Callout
+            'callout': Callout,
+            'code-example': CodeExample
         },
     })
     // .use(rehypeInline)
