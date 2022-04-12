@@ -46,7 +46,7 @@ async function renderFile(path) {
             'youtube': YouTube,
             'collapse': Collapse,
             'callout': Callout,
-            'code-example': CodeExample
+            // 'code-example': CodeExample
         },
     })
     // .use(rehypeInline)
