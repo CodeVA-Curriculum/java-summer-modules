@@ -9,7 +9,8 @@ export default function rehypeImageStyle() {
                 node.properties.className = ["image"]
                 parent.properties.className = ["image-wrapper"]
                 if(node.properties.src) {
-                    node.properties.src=`https://canvas.instructure.com/courses/4198981/files/${node.properties.src}/preview`
+                    // TODO: get the course id from the CLI and insert it here
+                    node.properties.src=`https://canvas.instructure.com/courses/13038/files/${node.properties.src}/preview`
                 }
             }
         })

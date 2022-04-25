@@ -8,7 +8,8 @@ import {toHtml} from 'hast-util-to-html'
 const CodeExample = (properties, children) => {
     const file = readSync('./src/components/code-example/index.html')
     let blob = String(file)
-    blob = blob.replace("{{ imageURL }}", `https://canvas.instructure.com/courses/4198981/files/${properties.imgId}/preview`)
+    // TODO: import course ID from CLI
+    blob = blob.replace("{{ imageURL }}", `https://canvas.instructure.com/courses/13038/files/${properties.imgId}/preview`)
     blob = blob.replace("{{ altText }}", properties.alt)
     
     // Convert children to plaintext
