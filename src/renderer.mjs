@@ -24,6 +24,7 @@ import {CodeExample} from './components/code-example/index.mjs'
 import rehypeImageStyle from './imageStyle.mjs'
 import remarkGfm from 'remark-gfm'
 import behead from 'remark-behead'
+import rehypePrism from 'rehype-prism-plus'
 // const YouTube = (properties, children) =>
   
 
@@ -46,7 +47,7 @@ async function renderFile(path) {
             'youtube': YouTube,
             'collapse': Collapse,
             'callout': Callout,
-            // 'code-example': CodeExample
+            'code-example': CodeExample
         },
     })
     // .use(rehypeInline)
@@ -55,6 +56,7 @@ async function renderFile(path) {
     //   body: 'section'
     //   // TODO: add classes
     // }
+    .use(rehypePrism)
     .use(rehypeDocument, {
         css: './src/main.css'
     })
