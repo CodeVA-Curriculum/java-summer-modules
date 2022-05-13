@@ -22,7 +22,7 @@ By the end of this course, participants will be able to:
 * Read, write, test, and debug programs written in the Java Processing framework
 * Read, write, test, and debug Java programs that include variables, conditionals, loops, and custom classes & methods.
 * Explain & teach fundamental attributes of object-oriented & strongly-typed coding languages
-* Identify & practice pedagogical techniques for engaging students in creative coding, including using unplugged activities, the PRIMM model, and student-led project-based learning
+* Identify & practice pedagogical techniques for engaging students in creative coding, including using unplugged activities, the Use-Modify-Create model, and student-led project-based learning
 
 ## Essential Questions
 
@@ -106,7 +106,7 @@ Here are some more details about the synchronous sessions:
 | New Ideas: Classes     | Learn about object-oriented programming principles in Processing |
 | Classes Model Lesson   | Practice creating classes in Processing during an interactive model lesson |
 | Decomposition          | Learn about computational literacies, include decomposition, and how it relates to object-oriented programming |
-| Java Pacing Guide      | Review and discuss a standards-aligned Java Pacing Guide designed |
+| Java Pacing Guide      | Review and discuss a standards-aligned Java Pacing Guide |
 | Break                  | Take a break! |
 | TLO Round #2           | Engage in peer teaching with your fellow participants |
 | Advanced Prompts       | Collaborate with fellow participants to develop project ideas that include conditional control structures, or practice your Java coding skills with individualized support |
@@ -121,10 +121,8 @@ CodeVA believes that the best professional learning experiences facilitate dialo
 
 ## Additional Resources
 
-| Resource & Link | Description |
-| --------------- | ----------- |
-| [The Processing Foundation](https://processingfoundation.org/) |
-| [The Processing Reference Materials](https://processing.org/reference) |
-| [Download & Install Processing](https://processing.org/) |
-| [Learn Processing](https://processing.org/tutorials) |
-| [The Virginia Programming SOLs](https://www.doe.virginia.gov/testing/sol/standards_docs/computer-science/2017/stds-compsci-prg.pdf) |
+* [The Processing Foundation](https://processingfoundation.org/)
+* [The Processing Reference Materials](https://processing.org/reference)
+* [Download & Install Processing](https://processing.org/)
+* [Learn Processing](https://processing.org/tutorials)
+* [The Virginia Programming SOLs](https://www.doe.virginia.gov/testing/sol/standards_docs/computer-science/2017/stds-compsci-prg.pdf)
