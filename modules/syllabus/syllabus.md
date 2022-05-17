@@ -85,7 +85,7 @@ Here are some more details about the synchronous sessions:
 | Use, Modify, Create           | Explore & define the *Use, Modify, Create* process for learning to code |
 | Break                         | Take a break! |
 | Intro to the ECS TLO Model    | Learn about the peer-teaching model we will use during the summer training |
-| Designing Project Prompts     | Collaborate with fellow participants to develop project ideas that include conditional control structures, or practice your Java coding skills with individualized support |
+| Designing Project Prompts     | Collaborate with fellow participants to develop best-practices around designing standards-aligned project prompts with students |
 
 #### Day 2
 
@@ -97,7 +97,7 @@ Here are some more details about the synchronous sessions:
 | Long-Term Projects    | Evaluate projects for their alignment to standards & competencies & opportunities for self-differentiation |
 | Break                 | Take a break! |
 | TLO Round #1          | Engage in peer teaching with your fellow participants! |
-| Intermediate Prompts  | Collaborate with fellow participants to develop project ideas that include conditional control structures, or practice your Java coding skills with individualized support |
+| Intermediate Prompts  | Collaborate with fellow participants to develop project ideas that include variables, or practice your Python coding skills with individualized support |
 
 #### Day 3
 
