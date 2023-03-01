@@ -20,10 +20,12 @@ import {h} from 'hastscript'
 import {YouTube} from './components/youtube/index.mjs'
 import {Collapse} from './components/collapse/index.mjs'
 import {Callout} from './components/callout/index.mjs'
+import {CodeExample} from './components/code-example/index.mjs'
 import rehypeImageStyle from './imageStyle.mjs'
 import remarkGfm from 'remark-gfm'
 import behead from 'remark-behead'
 import addClasses from 'rehype-add-classes'
+import rehypePrism from 'rehype-prism-plus'
 // const YouTube = (properties, children) =>
   
 
@@ -45,14 +47,25 @@ async function renderFile(path) {
       components: {
             'youtube': YouTube,
             'collapse': Collapse,
-            'callout': Callout
+            'callout': Callout,
+            'code-example': CodeExample
         },
     })
     // .use(rehypeInline)
     .use(addClasses, {
       h1: 'title',
       body: 'section'
-      // TODO: add classes
+    })
+    .use(rehypePrism)
+    .use(rehypeDocument, {
+        css: './src/main.css'
+    })
+    .use(rehypeInline, {
+        js: false,
+        css: true,
+        images: false,
+        imports: false,
+        svgElements: false,
     })
     // .use(rehypeDocument, {
     //     // css: './src/main.css'
