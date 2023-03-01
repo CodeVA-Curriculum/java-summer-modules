@@ -24,6 +24,7 @@ import {CodeExample} from './components/code-example/index.mjs'
 import rehypeImageStyle from './imageStyle.mjs'
 import remarkGfm from 'remark-gfm'
 import behead from 'remark-behead'
+import addClasses from 'rehype-add-classes'
 import rehypePrism from 'rehype-prism-plus'
 // const YouTube = (properties, children) =>
   
@@ -51,11 +52,10 @@ async function renderFile(path) {
         },
     })
     // .use(rehypeInline)
-    // .use(addClasses, {
-    //   h1: 'title',
-    //   body: 'section'
-    //   // TODO: add classes
-    // }
+    .use(addClasses, {
+      h1: 'title',
+      body: 'section'
+    })
     .use(rehypePrism)
     .use(rehypeDocument, {
         css: './src/main.css'
@@ -67,10 +67,20 @@ async function renderFile(path) {
         imports: false,
         svgElements: false,
     })
+    // .use(rehypeDocument, {
+    //     // css: './src/main.css'
+    // })
+    // .use(rehypeInline, {
+    //     js: false,
+    //     css: true,
+    //     images: false,
+    //     imports: false,
+    //     svgElements: false,
+    // })
     .use(rehypeImageStyle)
-    .use(rehypeInjectStyles)
-    .use(rehypeDecapitate)
-    .use(rehypeCanvasWrapper)
+    // .use(rehypeInjectStyles)
+    // .use(rehypeDecapitate)
+    // .use(rehypeCanvasWrapper)
     .use(rehypeFormat)
     .use(rehypeStringify)
     .process(await read(path))

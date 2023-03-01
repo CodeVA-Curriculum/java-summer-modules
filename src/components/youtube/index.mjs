@@ -10,9 +10,13 @@ const YouTube = (properties, children) => {
     const hast = fromParse5(p5ast, file)
 
     visit(hast, 'element', function (node, index, parent) {
-        if (['body'].includes(node.tagName)) {
+        if (['body', 'html'].includes(node.tagName)) {
             parent.children.splice(index, 1, ...node.children)
             // Do not traverse `node`, continue at the node *now* at `index`.
+            return [SKIP, index]
+        } if(['head'].includes(node.tagName)) {
+            parent.children.splice(index, 1)
+                // Do not traverse `node`, continue at the node *now* at `index`.
             return [SKIP, index]
         } else {
             return
