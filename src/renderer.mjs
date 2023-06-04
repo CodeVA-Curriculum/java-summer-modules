@@ -21,6 +21,7 @@ import {YouTube} from './components/youtube/index.mjs'
 import {Collapse} from './components/collapse/index.mjs'
 import {Callout} from './components/callout/index.mjs'
 import {CodeExample} from './components/code-example/index.mjs'
+import {Replit} from './components/replit/index.mjs'
 import rehypeImageStyle from './imageStyle.mjs'
 import remarkGfm from 'remark-gfm'
 import behead from 'remark-behead'
@@ -41,14 +42,17 @@ async function renderFile(path) {
     // })
     .use(remarkDirective)
     .use(remarkDirectiveRehype)
-    .use(remarkRehype)
+    .use(remarkRehype, {
+        allowDangerousHtml: true
+    })
     // .use(rehypeWrap, { selector: 'p img', wrapper: 'div.image-p'})
     .use(rehypeComponents, {
       components: {
             'youtube': YouTube,
             'collapse': Collapse,
             'callout': Callout,
-            'code-example': CodeExample
+            'code-example': CodeExample,
+            'replit': Replit
         },
     })
     // .use(rehypeInline)
@@ -78,11 +82,13 @@ async function renderFile(path) {
     //     svgElements: false,
     // })
     .use(rehypeImageStyle)
-    // .use(rehypeInjectStyles)
-    // .use(rehypeDecapitate)
-    // .use(rehypeCanvasWrapper)
+    .use(rehypeInjectStyles)
+    .use(rehypeDecapitate)
+    .use(rehypeCanvasWrapper)
     .use(rehypeFormat)
-    .use(rehypeStringify)
+    .use(rehypeStringify, {
+        allowDangerousHtml: true
+    })
     .process(await read(path))
     return html;
 }
