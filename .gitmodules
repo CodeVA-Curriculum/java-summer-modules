@@ -1,0 +1,3 @@
+[submodule "polyscribe-canvas"]
+	path = polyscribe-canvas
+	url = https://github.com/CodeVA-Curriculum/polyscribe-canvas
