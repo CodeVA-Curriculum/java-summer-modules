@@ -3,3 +3,5 @@ node_modules
 dist/*
 dist*
 dist
+yarn.lock
+node_modules/.yarn-integrity
