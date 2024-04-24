@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "setup": "yarn --cwd ./polyscribe-canvas/",
-    "dev": "yarn --cwd ./polyscribe-canvas/ build"
+    "render": "yarn --cwd ./polyscribe-canvas/ build",
+    "copy": "yarn --cwd ./polyscribe-canvas/ copy"
   }
 }
