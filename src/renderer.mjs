@@ -22,6 +22,7 @@ import {Collapse} from './components/collapse/index.mjs'
 import {Callout} from './components/callout/index.mjs'
 import {CodeExample} from './components/code-example/index.mjs'
 import {Replit} from './components/replit/index.mjs'
+import { Praxly } from './components/praxly/index.mjs'
 import rehypeImageStyle from './imageStyle.mjs'
 import remarkGfm from 'remark-gfm'
 import behead from 'remark-behead'
@@ -52,7 +53,8 @@ async function renderFile(path) {
             'collapse': Collapse,
             'callout': Callout,
             'code-example': CodeExample,
-            'replit': Replit
+            'replit': Replit,
+            'praxly': Praxly
         },
     })
     // .use(rehypeInline)
