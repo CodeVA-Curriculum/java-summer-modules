@@ -28,6 +28,7 @@ import remarkGfm from 'remark-gfm'
 import behead from 'remark-behead'
 import addClasses from 'rehype-add-classes'
 import rehypePrism from 'rehype-prism-plus'
+import { ImageAside } from './components/image-aside/index.mjs'
 // const YouTube = (properties, children) =>
   
 
@@ -54,7 +55,8 @@ async function renderFile(path) {
             'callout': Callout,
             'code-example': CodeExample,
             'replit': Replit,
-            'praxly': Praxly
+            'praxly': Praxly,
+            'image-aside': ImageAside
         },
     })
     // .use(rehypeInline)

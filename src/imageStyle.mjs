@@ -10,7 +10,7 @@ export default function rehypeImageStyle() {
                 parent.properties.className = ["image-wrapper"]
                 if(node.properties.src && !node.properties.src.includes('http')) {
                     // TODO: get the course id from the CLI and insert it here
-                    node.properties.src=`https://canvas.instructure.com/courses/13220/files/${node.properties.src}/preview`
+                    node.properties.src=`https://canvas.instructure.com/courses/18151/files/${node.properties.src}/preview`
                 }
             }
         })
